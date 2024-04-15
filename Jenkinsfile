@@ -11,7 +11,7 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 script {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t wajidali05/lab11 .'
+                    bat 'docker build -t wajidali05/lab11 .'
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('Run Docker Image') {
             steps {
                 script {
-                    sh 'docker run -d -p 3000:3000 wajidali05/lab11'
+                    bat 'docker run -d -p 3000:3000 wajidali05/lab11'
                 }
             }
         }
