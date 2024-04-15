@@ -20,7 +20,6 @@ pipeline {
             steps {
                 script {
                     retry(3) {
-                        bat 'docker pull node:14-alpine'
                         bat 'docker build -t wajidali05/lab11 .'
                     }
                 }
