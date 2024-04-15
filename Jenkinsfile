@@ -19,7 +19,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t wajidali05/lab11 .'
+                    retry(3) {
+                        bat 'docker pull node:14-alpine'
+                        bat 'docker build -t wajidali05/lab11 .'
+                    }
                 }
             }
         }
